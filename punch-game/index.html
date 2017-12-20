@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>punch-game</title>
+    <link rel="stylesheet" type="text/css" href="./src/CSS/styles.css">
+  </head>
+  <body>
+    <div id="vue-app"> 
+      <img v-if="!restart" src="./src/assets/bag.png">
+      <img v-if="restart" src="./src/assets/bag-burst.png">
+      <h2 v-if="restart">Game Over!</h2>
+      <div class="outer_bar">
+        <div class="progress" v-bind:style="styleObj"></div>
+      </div>
+      <button v-show="!restart" @click="punchBag" width="50px">Punch</button>
+      <button @click="restartGame" width="50px">Reset</button>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
