@@ -2,6 +2,7 @@
     width:200px;
     height: 20px;
     border: solid black 1px;
+    margin-left: 15px;
 }
 .progress{
     height: 20px;
@@ -11,4 +12,8 @@
 button{
     margin-top: 15px;
     display: inline-block;
+}
+
+img,button,h2,p{
+    margin-left: 15px;
 }

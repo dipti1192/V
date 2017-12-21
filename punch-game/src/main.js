@@ -17,7 +17,7 @@ new Vue({
   },
   methods: {
     punchBag: function () {
-      this.width -= 10
+      this.width -= 20
       this.styleObj = {width: this.width + 'px'}
       if (this.width <= 0) {
         this.restart = true

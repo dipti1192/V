@@ -8,14 +8,15 @@
   </head>
   <body>
     <div id="vue-app"> 
-      <img v-if="!restart" src="./src/assets/bag.png">
+      <h2>Punching Game</h2>
+      <img v-if="!restart" @click="punchBag" src="./src/assets/bag.png">
       <img v-if="restart" src="./src/assets/bag-burst.png">
-      <h2 v-if="restart">Game Over!</h2>
+      <h2 v-if="restart">Game Over!!!</h2>
       <div class="outer_bar">
         <div class="progress" v-bind:style="styleObj"></div>
       </div>
-      <button v-show="!restart" @click="punchBag" width="50px">Punch</button>
-      <button @click="restartGame" width="50px">Reset</button>
+      <p v-show="!restart">Click on bag to Punch the bag!</p>
+      <button @click="restartGame" width="50px">Restart</button>
     </div>
     <!-- built files will be auto injected -->
   </body>
