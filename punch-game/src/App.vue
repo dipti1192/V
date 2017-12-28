@@ -17,24 +17,24 @@
   export default {
     name: 'app',
     data () {
-      return{
+      return {
         users: [
-              {
-                name: 'Dipti',
-                designation: 'Sr.Software Engineer',
-                enableDetails: false
-              },
-              {
-                name: 'Pooja',
-                designation: 'Sr.Software Engineer',
-                enableDetails: false
-              },
-              {
-                name: 'Manali',
-                designation: 'Software Engineer',
-                enableDetails: false
-              }
-            ]
+          {
+            name: 'Dipti',
+            designation: 'Sr.Software Engineer',
+            enableDetails: false
+          },
+          {
+            name: 'Pooja',
+            designation: 'Sr.Software Engineer',
+            enableDetails: false
+          },
+          {
+            name: 'Manali',
+            designation: 'Software Engineer',
+            enableDetails: false
+          }
+        ]
       }
     }
   }
