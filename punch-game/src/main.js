@@ -25,6 +25,7 @@ new Vue({
     },
     restartGame: function () {
       this.restart = false
+      this.width = 200
       this.styleObj = {width: 200 + 'px'}
     }
   }
