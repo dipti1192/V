@@ -1,7 +1,7 @@
 <template>
   <div id="Home">
     <h1>{{ msg }}</h1>
-      <div class="section" v-for="column in columns" v-bind:key="column.id">
+      <div v-if="columns.length>0" class="section" v-for="column in columns" v-bind:key="column.id">
         <Section :column="column"></Section>
       </div>
   </div>
@@ -34,7 +34,8 @@ export default {
       this.$http.get('https://vuejs-db-74a8b.firebaseio.com/posts.json').then(
       function (data, status, request) {
         console.log(data)
-        this.columns = data.body['-L1SHPzkN0kLJZDe2Df6'].columns
+        this.columns = data.body['-L1pfSGFMU44QdzDmWZH'].columns
+        console.log(this.columns)
       })
     }
   },
@@ -46,7 +47,9 @@ export default {
     //   state of Maharashtra. It is the most populous city in India with an estimated city proper population of 12.4 million as of
     //   2011. Along with the neighbouring regions of the Mumbai Metropolitan Region, it is second most populous metropolitan
     //   area in India, with a population of 21.3 million as of 2016.[12][13][14] Mumbai lies on the Konkan on the west coast of
-    //   India and has a deep natural harbour.`
+    //   India and has a deep natural harbour.`,
+    //   state: 'Maharashtra',
+    //   img: `https://firebasestorage.googleapis.com/v0/b/vuejs-db-74a8b.appspot.com/o/LearnVueJS1%2FVictoria_Terminus%2C_Mumbai.jpg?alt=media&token=d14947ff-0438-4d7c-bf17-642de4c0b428`
     // },
     // {
     //   id: 2,
@@ -55,7 +58,8 @@ export default {
     //   capital of the Indian state of Karnataka. It has a population of over ten million,[14] making it a megacity and the third most
     //   populous city and fifth most populous urban agglomeration in India.[15] It is located in southern India on the Deccan
     //   Plateau. Its elevation is over 900 m (3,000 ft) above sea level, the highest of India's major cities.`,
-    //   state: 'Karnataka'
+    //   state: 'Karnataka',
+    //   img: `https://firebasestorage.googleapis.com/v0/b/vuejs-db-74a8b.appspot.com/o/LearnVueJS1%2FMysore-Palace-Banglore.jpg?alt=media&token=a750ca0a-9936-46ea-b4da-52c849f0d817`
     // },
     // {
     //   id: 3,
@@ -70,7 +74,8 @@ export default {
     //   visiting India, and 30 to 40 percent of domestic health tourists.[15] As such, it is termed "India's health capital". As a growing
     //   metropolitan city in a developing country, Chennai confronts substantial pollution and other logistical and socio-economic
     //   problems.`,
-    //   state: 'Tamil Nadu'
+    //   state: 'Tamil Nadu',
+    //   img: `https://firebasestorage.googleapis.com/v0/b/vuejs-db-74a8b.appspot.com/o/LearnVueJS1%2FChennai-COC.jpg?alt=media&token=450fd9d1-e0ed-4bbf-939e-7df5b98f958a`
     // }
     // ]})
     this.getDataFromFireBase()
@@ -85,8 +90,11 @@ h1, h2 {
 }  
 
 .section{
+    float: left;
+    height: 500px;
     border: solid black 1px;
     background-color: lightblue;
+    overflow-y: auto;
 }
 
 /* Desktop View */
@@ -105,6 +113,7 @@ h1, h2 {
         display: inline-block;
         margin-top: 3%;
         margin-left: 3%;
+        height: 350px;
     }
     
     div:nth-child(4){
@@ -120,6 +129,7 @@ h1, h2 {
         width: 100%;
         display: block;
         margin-top: 5%;
+        height: auto;
     }
 }
 </style>

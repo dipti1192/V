@@ -2,9 +2,10 @@
     <div id="section">
         <div class="title">
             {{column.name}}
-        </div>
+        </div> 
         <p class="text">
-            {{column.description}}        
+            <img width="100%" height="250px" v-bind:src="column.img" alt="">
+            <h3>State:</h3><span>{{column.state}}</span>
         </p>
     </div>
 </template>
@@ -18,9 +19,10 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   }
-//   created: function () {
-//     console.log(this.column)
-//   }
+  // created: function () {
+  //   console.log(this.column)
+  //   alert(column.img)
+  // }
 }
 </script>
 
@@ -86,5 +88,8 @@ body{
     clear: right;
     padding: 10px;
     text-align:  justify;
+}
+h3{
+  display: inline-block;
 }
 </style>
