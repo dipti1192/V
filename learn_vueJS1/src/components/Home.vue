@@ -9,6 +9,7 @@
 
 <script>
 import Section from './Section'
+
 // Vue.http.options.emulateJSON = true;
 export default {
   name: 'Home',
