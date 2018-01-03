@@ -1,5 +1,6 @@
 <template>
     <div id="section">
+      <router-link v-bind:to="getURL(column.id)">
         <div class="title">
             {{column.name}}
         </div> 
@@ -7,6 +8,7 @@
             <img width="100%" height="250px" v-bind:src="column.img" alt="">
             <h3>State:</h3><span>{{column.state}}</span>
         </p>
+      </router-link>
     </div>
 </template>
 
@@ -18,6 +20,11 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  methods: {
+    getURL: function (id) {
+      return '/sectionDetails/' + id
+    }
   }
   // created: function () {
   //   console.log(this.column)
@@ -28,45 +35,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-.parent{
-  position: absolute;
-  width: 100%;
-  height: 80%;
-  border: black solid 1px;
-}
-article{
-  width: 33.15%;
-  height: 100%;
-  display: inline-block;
-  background: lightgreen;
-  border: solid 1px black;
-}
-header{
-  width: 100%;
-  height:  30px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 20;
-}
-body{
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
 .title{
     float: right;
     width: 98.5%;
